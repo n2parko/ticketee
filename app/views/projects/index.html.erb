@@ -1,6 +1,14 @@
 <html>
 
-<h1> Hello </h1>
+<h1> List of Projects: </h1>
+
+<ul>
+	<% @projects.each do |p| %>
+		<li> <%= link_to p.name, p %> </li>
+		<%= link_to 'Edit', edit_project_path(p)%>
+		<%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+</ul>
 
 <%= link_to "New Project", new_project_path %>
 

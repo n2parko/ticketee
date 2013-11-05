@@ -9,6 +9,8 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -29,6 +31,7 @@ group :test do
 	gem 'cucumber-rails', :require =>false
 	gem 'capybara'
 	gem 'database_cleaner'
+        gem 'devise'
 end
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
