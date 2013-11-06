@@ -1,6 +1,8 @@
 class TicketsController < ApplicationController
     before_filter :find_project
     before_filter :find_ticket, :only => [:show, :edit, :update, :destroy]
+    before_filter :authenticate_user!, :except => [:index, :show]
+
     
     def index
         @tickets = @project.tickets.all
@@ -37,6 +39,6 @@ class TicketsController < ApplicationController
     
     private
         def ticket_params
-            params.require(:ticket).permit(:title, :description)
+            params.require(:ticket).permit(:title, :description).merge!(:user => current_user)
         end
 end
